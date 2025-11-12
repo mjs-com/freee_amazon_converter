@@ -1,0 +1,2 @@
+# freee_amazon_converter
+アマゾン購入明細書をfreeeアップロードの形式に変換します。
