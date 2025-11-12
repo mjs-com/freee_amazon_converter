@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freeeアップロード用CSV変換ツール - ダウンロード</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>freeeアップロード用CSV変換ツール</h1>
+            <p>Amazon購入明細をfreee形式に簡単変換</p>
+        </div>
+
+        <div class="download-section">
+            <a href="ここにzipファイルのURLを入力" class="download-button" id="downloadBtn">
+                📥 アプリをダウンロード
+            </a>
+            <div class="feedback-message">
+                <p>もしアプリを使ってfreeeにアップロードできましたら、<br>
+                「役に立ったよー！」などの感想をXでシェアしていただけると、とても嬉しいです💕<br>
+                その際は <strong><a href="https://x.com/Dr_kurukuru" target="_blank" rel="noopener noreferrer">@Dr_kurukuru</a></strong> でメンションしていただけると助かります 🎉</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>freee公式の手順について</h2>
+                <p>freeeへの明細アップロードの詳細な手順については、<a href="https://support.freee.co.jp/hc/ja/articles/202847550" target="_blank" rel="noopener noreferrer">freee公式のサポートページ</a>をご確認ください。</p>
+            </div>
+
+            <div class="section">
+                <h2>手続きの流れ</h2>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Amazonから購入明細をダウンロード</h3>
+                            <p>Amazonの「アカウントサービス」メニューから、「データを管理する」の「データをリクエスト」でリクエストを送信します。登録したメールアドレスに届いたCSVファイルをダウンロードしてください。</p>
+                            <p class="step-note">※リクエストを送信してからCSVファイルが届くまで、時間がかかる場合があります。</p>
+                        </div>
+                    </div>
+                    <div class="step-arrow">↓</div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>CSVファイルを確認</h3>
+                            <p>ダウンロードしたデータの中から <code>Retail.OrderHistory.3.csv</code> を見つけます。</p>
+                        </div>
+                    </div>
+                    <div class="step-arrow">↓</div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>アプリでCSVファイルを変換</h3>
+                            <p>アプリを起動し、<code>Retail.OrderHistory.3.csv</code> をアプリに入れて変換します。</p>
+                        </div>
+                    </div>
+                    <div class="step-arrow">↓</div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>変換結果を確認</h3>
+                            <p>変換結果が <code>output</code> フォルダに出力されます。CSVファイル名は <code>freee_amazon_明細.csv</code> です。</p>
+                        </div>
+                    </div>
+                    <div class="step-arrow">↓</div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>freeeにアップロード</h3>
+                            <p>freeeのホームから「明細のアップロード」をクリックし、変換した <code>freee_amazon_明細.csv</code> をアップロードします。</p>
+                            <p>「ご自身で作成したCSV（新規のフォーマット）」を選択し、「日付の形式」「入金額と出金額の形式」「明細の並び順の形式」を選択して、「取引日」「取引金額」「利用内容・摘要」の3つの項目を指定して取り込みます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>使用するCSVファイル</h2>
+                <p><code>Retail.OrderHistory.3.csv</code></p>
+                <p class="info-box">Amazonからダウンロードした購入履歴CSVファイルを使用します。</p>
+            </div>
+
+            <div class="section">
+                <h2>Windowsでの使い方</h2>
+                <ol style="list-style-position: inside; margin-left: 20px;">
+                    <li><code>start.bat</code> をダブルクリック</li>
+                    <li>ブラウザが自動で開きます</li>
+                    <li>CSVファイルを選択して変換</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>Macでの使い方</h2>
+                <ol style="list-style-position: inside; margin-left: 20px;">
+                    <li>ターミナルを開く</li>
+                    <li>以下のコマンドを実行:</li>
+                </ol>
+                <pre><code>chmod +x start.sh
+./start.sh</code></pre>
+                <ol style="list-style-position: inside; margin-left: 20px; counter-reset: list-counter 3;">
+                    <li style="counter-increment: list-counter;">ブラウザが自動で開きます</li>
+                    <li style="counter-increment: list-counter;">CSVファイルを選択して変換</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>必要なもの</h2>
+                <p><strong>Python 3.7以上</strong></p>
+                <p class="info-box">未インストールの場合は、起動時に案内が表示されます。</p>
+            </div>
+
+            <div class="section">
+                <h2>セキュリティ</h2>
+                <div class="info-box">
+                    <p><strong>このアプリはローカル環境でのみ動作します。</strong></p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>✓ データはインターネットに送信されません</li>
+                        <li>✓ すべての処理はあなたのPC内で完結します</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section disclaimer">
+                <h2>免責事項</h2>
+                <p>本ソフトウェア（以下「本ソフト」といいます）は、無料で提供されるフリーソフトウェアです。</p>
+                
+                <p>本ソフトの使用により発生したいかなる損害（データの損失、業務の中断、利益の損失、その他直接的または間接的な損害を含むがこれに限られません）についても、開発者である合同会社MJSカンパニー（以下「当社」といいます）は一切の責任を負いません。</p>
+                
+                <p>本ソフトは「現状のまま」提供され、明示的または黙示的を問わず、商品性、特定目的への適合性、権利侵害の不存在その他いかなる保証も行いません。</p>
+                
+                <p>本ソフトの使用は、利用者の自己責任において行われるものとし、利用者は本ソフトの使用により生じる一切の結果について、当社に対して何らの請求も行わないものとします。</p>
+                
+                <p>本ソフトの使用により、利用者のコンピュータシステムに何らかの問題が発生した場合、当社は一切の責任を負いません。利用者は、本ソフトを使用する前に、必要に応じてデータのバックアップを取得するなど、適切な対策を講じるものとします。</p>
+                
+                <p>本ソフトの内容は予告なく変更される場合があり、当社は本ソフトの継続的な提供、修正、更新を保証するものではありません。</p>
+                
+                <p>本免責事項の内容は、法律の変更、判例等により予告なく変更される場合があります。</p>
+                
+                <p>本ソフトを使用することにより、利用者は本免責事項の内容を理解し、これに同意したものとみなされます。</p>
+                
+                <p class="warning-box"><strong>本ソフトを使用する前に、必ず本免責事項の内容を確認し、同意の上でご使用ください。</strong></p>
+            </div>
+
+            <div class="section developer-info">
+                <h2>開発者情報</h2>
+                <p><strong>開発者:</strong> 合同会社MJSカンパニー</p>
+                <p>本ソフトウェアに関するお問い合わせやサポートについては、開発者までご連絡ください。</p>
+                <p class="info-box">ただし、本ソフトは無料で提供されるフリーソフトウェアであるため、サポートの提供を保証するものではありません。</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
